@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>sample program</title>
+</head>
+<body>
+<form>
+<input type="text" onchange="alert(this.value)">
+<input type="button" value="BUTTON">
+<h1>drop down events</h1>
+focus out<input type="text" id='t1' onfocusout='fout()'><br>
+focus in<input type="text" onfocusin='fin(this)'>
+<br>
+key down<input type="text" onkeydown='kdown()'>
+<script>
+function fout()
+{
+var x= document.getElementById('t1');
+x.value=x.value.toUpperCase();
+}
+function fin(z)
+{
+z.style.background="red";
+}
+function kdown()
+{
+alert("thank u");
+}
+</script>
+</form>
+</body>
+</html>
+
+

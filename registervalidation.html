@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Form Validation: Empty form fields  </title>
+  <style>body{font-family:Verdana;}</style>
+</head>
+  
+<body>
+<script>
+  function check(myform){
+ if (myform.myname.value == "" || myform.myname.value == null)
+ {
+   alert("Name is mandatory");
+   return false;
+ }
+    if(myform.myphone.value == "" || myform.myphone.value == null)
+    {
+      alert("Phone number is mandatory");
+      return false;
+    }
+    else{
+      return true;
+    }
+  }
+function check_Email(mail){
+    var regex = /^(([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}){1,25})+([;.](([a-zA-Z0-9_\-\.]+)@{[a-zA-Z0-9_\-\.]+0\.([a-zA-Z]{2,5}){1,25})+)*$/;
+    if(regex.test(mail.myemail.value)){
+      return true;
+      alert("Congrats! This is a valid Email email");
+    }
+    else{
+      alert("This is not a valid email address");
+      return false;
+    }
+  }
+</script>
+  <form name="formvalidate" action="formprocess.php" 
+        method="get" onSubmit="return check(formvalidate)">
+<form name="formvalidate" action="form_process.php"
+  method="post" onSubmit="return check_Email(this)" >
+  <p> Name : 
+   <input type="text" size="50" name="myname" /> </p>
+          
+ <p> Phone No : 
+   <input type="text" size="50" name="myphone" /> </p>
+<p> Your Email Address : 
+   <input type="text" size="40" name="myemail" /> </p>
+ <p> 
+   <input type="submit" value="Submit" />
+   <input type="reset"  value="Clear" />
+ </p>
+  </form>         
+          
+     
+     </body>
+</html>
